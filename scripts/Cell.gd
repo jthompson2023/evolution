@@ -25,7 +25,7 @@ func _process(delta):
 		var offspring = duplicate()
 		get_parent().add_child(offspring)
 		offspring.rng.randomize()
-		offspring.speed = rng.randfn(speed, speed_mutation)
+		offspring.speed = max(0, rng.randfn(speed, speed_mutation)) # Ensures no negative speed
 		translate(direction * speed * delta * 100)
 	
 	var sensed = get_sensed()
