@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/Cell.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scripts/Main.gd" type="Script" id=3]
+[ext_resource path="res://scenes/Spawner.tscn" type="PackedScene" id=4]
+
+[node name="Main" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 767, 449 )
+current = true
+
+[node name="Spawner" parent="." instance=ExtResource( 4 )]
+position = Vector2( 748, 453 )
+radius = 450.0
+
+[node name="Cells" type="Node2D" parent="."]
+
+[node name="Cell" parent="Cells" instance=ExtResource( 2 )]
+position = Vector2( 563, 491 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 50.0
+margin_top = 50.0
+margin_right = 250.0
+margin_bottom = 150.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "[SCENE VARIABLES]"
+
+[node name="StopTimer" type="Timer" parent="."]
+wait_time = 300.0
+one_shot = true
+
+[connection signal="timeout" from="StopTimer" to="." method="_on_StopTimer_timeout"]
+
+[editable path="Spawner"]

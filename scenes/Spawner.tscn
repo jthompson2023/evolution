@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scripts/Spawner.gd" type="Script" id=1]
+[ext_resource path="res://scenes/Sugar.tscn" type="PackedScene" id=2]
+
+[node name="Spawner" type="Node2D"]
+show_behind_parent = true
+script = ExtResource( 1 )
+spawn_object = ExtResource( 2 )
+
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 0.25
+autostart = true
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_SpawnTimer_timeout"]
