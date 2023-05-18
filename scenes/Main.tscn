@@ -6,6 +6,7 @@
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 3 )
+energy_drain = 13.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 767, 449 )
@@ -19,6 +20,13 @@ radius = 450.0
 
 [node name="Cell" parent="Cells" instance=ExtResource( 2 )]
 position = Vector2( 563, 491 )
+speed = null
+speed_mutation = null
+size = null
+size_mutation = null
+randomness = null
+reproduction_threshold = null
+energy = null
 
 [node name="Label" type="Label" parent="."]
 margin_left = 50.0
@@ -28,10 +36,26 @@ margin_bottom = 150.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "[SCENE VARIABLES]"
 
+[node name="Pause" type="CheckBox" parent="."]
+pause_mode = 2
+margin_left = 22.0
+margin_top = 170.0
+margin_right = 46.0
+margin_bottom = 194.0
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+text = "pause"
+
 [node name="StopTimer" type="Timer" parent="."]
 wait_time = 300.0
 one_shot = true
+autostart = true
 
+[connection signal="toggled" from="Pause" to="." method="_on_Pause_toggled"]
 [connection signal="timeout" from="StopTimer" to="." method="_on_StopTimer_timeout"]
 
 [editable path="Spawner"]

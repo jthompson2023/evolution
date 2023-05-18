@@ -9,7 +9,8 @@ radius = 4.0
 [node name="Sugar" type="Area2D" groups=["sugar"]]
 script = ExtResource( 2 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_horizontal_guides_": [  ]
 }
 
 [node name="Sprite" type="Sprite" parent="."]

@@ -1,0 +1,45 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/Dummy.tscn" type="PackedScene" id=1]
+
+[node name="TestDummy" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 767, 449 )
+current = true
+
+[node name="Label" type="Label" parent="."]
+margin_left = 50.0
+margin_top = 50.0
+margin_right = 250.0
+margin_bottom = 150.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "[SCENE VARIABLES]"
+
+[node name="StopTimer" type="Timer" parent="."]
+wait_time = 300.0
+one_shot = true
+
+[node name="PredatorDummy" parent="." instance=ExtResource( 1 )]
+position = Vector2( 689, 437 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="PreyDummy" parent="." instance=ExtResource( 1 )]
+position = Vector2( 635, 404 )
+__meta__ = {
+"_edit_group_": true
+}
+do_nothing = false
+
+[node name="Sprite" parent="PreyDummy" index="1"]
+self_modulate = Color( 0.0313726, 1, 0, 1 )
+
+[node name="Dummy" parent="." instance=ExtResource( 1 )]
+position = Vector2( 739, 266 )
+
+[connection signal="timeout" from="StopTimer" to="." method="_on_StopTimer_timeout"]
+
+[editable path="PredatorDummy"]
+[editable path="PreyDummy"]
