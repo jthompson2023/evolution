@@ -6,7 +6,6 @@
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 3 )
-energy_drain = 13.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 767, 449 )
@@ -19,14 +18,7 @@ radius = 450.0
 [node name="Cells" type="Node2D" parent="."]
 
 [node name="Cell" parent="Cells" instance=ExtResource( 2 )]
-position = Vector2( 563, 491 )
-speed = null
-speed_mutation = null
-size = null
-size_mutation = null
-randomness = null
-reproduction_threshold = null
-energy = null
+position = Vector2( 820, 429 )
 
 [node name="Label" type="Label" parent="."]
 margin_left = 50.0

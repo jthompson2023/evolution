@@ -41,3 +41,5 @@ custom_styles/fg = SubResource( 3 )
 custom_styles/bg = SubResource( 4 )
 max_value = 800.0
 percent_visible = false
+
+[connection signal="area_entered" from="." to="." method="_on_Cell_area_entered"]

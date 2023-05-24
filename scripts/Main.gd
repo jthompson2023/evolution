@@ -66,7 +66,6 @@ func _exit_tree():
 		File.WRITE)
 		file_out.store_string(to_json(data))
 		file_out.close()
-	
 
 
 func _on_StopTimer_timeout():
@@ -74,7 +73,7 @@ func _on_StopTimer_timeout():
 	queue_free()
 
 
-func _on_Pause_toggled(button_pressed):
+func _on_Pause_toggled(_button_pressed):
 	if $Pause.pressed == true:
 		print("pause")
 		get_tree().paused = true
