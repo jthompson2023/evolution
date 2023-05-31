@@ -19,7 +19,7 @@ onready var rng := RandomNumberGenerator.new()	# used for normal distributions f
 export  var randomness := 0.25 					# how erratically the cell moves without a target.
 export  var reproduction_threshold := 200.0 	# how much energy before the cell splits
 export  var speed_mutation := 25.0 				# std dev for speed mutation during reproduction.
-export  var size_mutation := 0.25				# same deal for speed.
+export  var size_mutation := 0.0				# same deal for speed.
 
 
 # CHANGING VARIABLES: constantly change over the course of play.
